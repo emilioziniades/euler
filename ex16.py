@@ -4,13 +4,11 @@
 #
 # What is the sum of the digits of the number 2^1000?
 
+from util import sum_digits
+
 
 def main():
     return sum_digits(2**1000)
-
-
-def sum_digits(n):
-    return sum([int(i) for i in list(str(n))])
 
 
 if __name__ == "__main__":
