@@ -1,7 +1,7 @@
 import unittest
 import time
 
-import ex2, ex10, ex11, ex12, ex13, ex14, ex15, ex16, ex17, ex18, ex19, ex20, ex21
+import ex2, ex10, ex11, ex12, ex13, ex14, ex15, ex16, ex17, ex18, ex19, ex20, ex21, ex22
 
 
 class TestEulerSolutions(unittest.TestCase):
@@ -20,6 +20,7 @@ class TestEulerSolutions(unittest.TestCase):
             (ex19, 171),
             (ex20, 648),
             (ex21, 31626),
+            (ex22, 871198282),
         ]
         for ex, want in exercises:
             with self.subTest(i=ex):
