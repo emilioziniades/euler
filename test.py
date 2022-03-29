@@ -1,13 +1,16 @@
 import unittest
 import time
 
-import ex2, ex10, ex11, ex12, ex13, ex14, ex15, ex16, ex17, ex18, ex19, ex20, ex21, ex22
+import ex1, ex2, ex3, ex4, ex10, ex11, ex12, ex13, ex14, ex15, ex16, ex17, ex18, ex19, ex20, ex21, ex22
 
 
 class TestEulerSolutions(unittest.TestCase):
     def test_exercises(self):
         exercises = [
+            (ex1, 233168),
             (ex2, 4613732),
+            (ex3, 6857),
+            (ex4, 906609),
             (ex10, 142913828922),
             (ex11, 70600674),
             (ex12, 76576500),

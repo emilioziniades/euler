@@ -1,5 +1,4 @@
 from functools import reduce
-from math import factorial
 
 
 class TriangleNumbers:
@@ -53,12 +52,43 @@ class CollatzSequence:
         return self
 
 
+def multiples(n, until):
+    return [i for i in range(n, until, n)]
+
+
 def primes(n):
     sieve = set(range(2, n + 1))
     for i in range(2, n + 1):
         if i in sieve:
             sieve -= set(range(i + i, n + 1, i))
     return sieve
+
+
+def is_prime(num):
+    if num <= 1:
+        return False
+    if num == 2:
+        return True
+    if num % 2 == 0:
+        return False
+    for i in range(3, int(num**0.5 + 1), 2):
+        if num % i == 0:
+            return False
+    return True
+
+
+def prime_factors(num):
+    primes = []
+    current = 2
+    while num != 1:
+        if is_prime(current) and num % current == 0:
+            num /= current
+            primes.append(current)
+            continue
+
+        current += 1
+
+    return primes
 
 
 def divisors(n):
@@ -80,3 +110,8 @@ def proper_divisors(n):
 
 def sum_digits(n):
     return sum([int(i) for i in list(str(n))])
+
+
+def is_palindrome(n):
+    lst = list(str(n))
+    return lst == list(reversed(lst))
