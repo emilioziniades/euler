@@ -1,3 +1,5 @@
+# 18
+#
 # By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum current_total from top to bottom is 23.
 
 example = """
