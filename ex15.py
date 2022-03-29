@@ -7,7 +7,7 @@
 from collections import deque, namedtuple
 from math import comb
 
-Point = namedtuple("point", "x y")
+Point = namedtuple("Point", "x y")
 size = 20
 
 

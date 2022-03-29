@@ -30,8 +30,9 @@ def main():
 
             sequence.append(s)
     chain_lengths = {k: len(v) for k, v in sequences.items()}
-    return sorted(chain_lengths.items(), reverse=True, key=lambda x: x[1])[0][0]
+    return max(chain_lengths.items(), key=lambda x: x[1])[0]
+    # return sorted(chain_lengths.items(), reverse=True, key=lambda x: x[1])[0][0]
 
 
 if __name__ == "__main__":
-    main()
+    print(main())

@@ -1,6 +1,7 @@
 import unittest
+import time
 
-import ex2, ex10, ex11, ex12, ex13, ex14, ex15
+import ex2, ex10, ex11, ex12, ex13, ex14, ex15, ex16, ex17, ex18
 
 
 class TestEulerSolutions(unittest.TestCase):
@@ -13,11 +14,17 @@ class TestEulerSolutions(unittest.TestCase):
             (ex13, 5537376230),
             (ex14, 837799),
             (ex15, 137846528820),
+            (ex16, 1366),
+            (ex17, 21124),
+            (ex18, 1074),
         ]
         for ex, want in exercises:
             with self.subTest(i=ex):
+                started = time.time()
                 got = ex.main()
                 self.assertEqual(got, want)
+                elapsed = time.time() - started
+                print(f"{ex.__name__} - {elapsed:.2f}s")
 
 
 if __name__ == "__main__":
