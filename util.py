@@ -61,7 +61,7 @@ def primes(n):
     return sieve
 
 
-def factors(n):
+def divisors(n):
     return sorted(
         set(
             reduce(
@@ -70,6 +70,12 @@ def factors(n):
             )
         )
     )
+
+
+def proper_divisors(n):
+    div = divisors(n)
+    div.remove(n)
+    return div
 
 
 def sum_digits(n):
