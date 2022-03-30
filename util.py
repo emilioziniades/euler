@@ -148,7 +148,11 @@ def proper_divisors(n):
 
 
 def sum_digits(n):
-    return sum([int(i) for i in list(str(n))])
+    return sum(digits(n))
+
+
+def digits(n):
+    return [int(i) for i in list(str(n))]
 
 
 def is_palindrome(n):
