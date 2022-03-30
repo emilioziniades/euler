@@ -4,12 +4,16 @@
 #
 # What is the 10 001st prime number?
 
-from util import FibonacciNumbers
+from util import infinite_prime_sieve
+from itertools import islice
 
-fn = FibonacciNumbers()
 
-target = 10_001
-for i, n in enumerate(fn, 1):
-    if i == target:
-        print(n)
-        break
+def main():
+    target = 10_001
+    primes = infinite_prime_sieve()
+    elem = list(islice(primes, target - 1, target))[0]
+    return elem
+
+
+if __name__ == "__main__":
+    main()
