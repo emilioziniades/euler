@@ -36,11 +36,11 @@ class TestEulerSolutions(unittest.TestCase):
         ]
         for ex, want in exercises:
             with self.subTest(i=ex):
-                started = time.time()
+                started = time.perf_counter()
                 got = ex.main()
                 self.assertEqual(got, want)
-                elapsed = time.time() - started
-                print(f"{ex.__name__} - {elapsed:.2f}s")
+                elapsed = time.perf_counter() - started
+                print(f"{ex.__name__} - {elapsed:.3f}s")
 
 
 if __name__ == "__main__":
