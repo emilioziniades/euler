@@ -2,55 +2,36 @@ from functools import reduce
 from itertools import count
 
 
-class TriangleNumbers:
-    def __init__(self):
-        self.index = 1
-        self.current = 0
-
-    def __next__(self):
-        self.current += self.index
-        self.index += 1
-        return self.current
-
-    def __iter__(self):
-        return self
+def triangle_numbers():
+    i = 1
+    step = 2
+    while True:
+        yield i
+        i += step
+        step += 1
 
 
-class FibonacciNumbers:
-    def __init__(self):
-        self.n, self.n1 = 1, 2
-
-    def __next__(self):
-        n = self.n
-        self.n, self.n1 = self.n1, self.n + self.n1
-        return n
-
-    def __iter__(self):
-        return self
-
-    def until(self, limit):
-        current = self.__next__()
-        while current < limit:
-            yield current
-            current = self.__next__()
+def fibonacci():
+    n = 1
+    n1 = 2
+    while True:
+        yield n
+        n, n1 = n1, n + n1
 
 
-class CollatzSequence:
-    def __init__(self, start):
-        self.n = start
-        self.done = False
+def fibonacci_until(n):
+    fib = fibonacci()
+    i = next(fib)
+    while i < n:
+        yield i
+        i = next(fib)
 
-    def __next__(self):
-        n = self.n
-        if not self.done:
-            self.n = n / 2 if n % 2 == 0 else 3 * n + 1
-            self.done = n == 1
-            return int(n)
-        else:
-            raise StopIteration
 
-    def __iter__(self):
-        return self
+def collatz_sequence(n):
+    while n != 1:
+        yield n
+        n = n // 2 if n % 2 == 0 else 3 * n + 1
+    yield n
 
 
 def multiples(n, until):

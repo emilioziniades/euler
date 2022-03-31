@@ -15,14 +15,14 @@
 # NOTE: Once the chain starts the terms are allowed to go above one million.
 #
 
-from util import CollatzSequence
+from util import collatz_sequence
 
 
 def main():
     sequences = {1: [1]}
     for n in range(1, 1_000_000 + 1):
         sequence = []
-        for s in CollatzSequence(n):
+        for s in collatz_sequence(n):
             if s in sequences:
                 sequence += sequences[s]
                 sequences[n] = sequence
@@ -31,7 +31,6 @@ def main():
             sequence.append(s)
     chain_lengths = {k: len(v) for k, v in sequences.items()}
     return max(chain_lengths.items(), key=lambda x: x[1])[0]
-    # return sorted(chain_lengths.items(), reverse=True, key=lambda x: x[1])[0][0]
 
 
 if __name__ == "__main__":

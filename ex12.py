@@ -19,12 +19,12 @@
 # What is the value of the first triangle number to have over five hundred divisors?
 #
 
-from util import divisors, TriangleNumbers
+from util import divisors, triangle_numbers
 
 
 def main():
-    tn = TriangleNumbers()
-    for n in tn:
+    tri = triangle_numbers()
+    for n in tri:
         if len(divisors(n)) > 500:
             return n
 

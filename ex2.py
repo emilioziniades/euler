@@ -7,12 +7,12 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 #
 
-from util import FibonacciNumbers
+from util import fibonacci_until
 
 
 def main():
-    fn = FibonacciNumbers()
-    return sum([i for i in fn.until(4_000_000) if i % 2 == 0])
+    fib = fibonacci_until(4_000_000)
+    return sum([i for i in fib if i % 2 == 0])
 
 
 if __name__ == "__main__":

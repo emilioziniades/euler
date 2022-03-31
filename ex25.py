@@ -23,12 +23,12 @@
 #
 # What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
 
-from util import FibonacciNumbers, digits
+from util import fibonacci, digits
 
 
 def main():
-    fn = FibonacciNumbers()
-    for i, f in enumerate(fn, 2):  # start at 2 since FibonacciNumbers begins 1, 2, 3...
+    fib = fibonacci()
+    for i, f in enumerate(fib, 2):  # start at 2 since fibonacci begins 1, 2, 3
         if len(digits(f)) == 1000:
             return i
 
