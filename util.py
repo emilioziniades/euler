@@ -12,8 +12,7 @@ def triangle_numbers():
 
 
 def fibonacci():
-    n = 1
-    n1 = 2
+    n, n1 = 1, 2
     while True:
         yield n
         n, n1 = n1, n + n1
@@ -21,10 +20,10 @@ def fibonacci():
 
 def fibonacci_until(n):
     fib = fibonacci()
-    i = next(fib)
-    while i < n:
+    for i in fib:
+        if i > n:
+            break
         yield i
-        i = next(fib)
 
 
 def collatz_sequence(n):
