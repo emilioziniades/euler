@@ -138,3 +138,7 @@ def digits(n):
 def is_palindrome(n):
     lst = list(str(n))
     return lst == list(reversed(lst))
+
+
+def product(lst):
+    return reduce(lambda a, b: a * b, lst)
