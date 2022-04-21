@@ -13,15 +13,11 @@
 # What is the largest 1 to 9 pandigital 9-digit number that can be formed as the concatenated product of an integer with (1,2, ... , n) where n > 1?
 from itertools import permutations, count
 
+from util import is_pandigital
+
 
 def concat_product(n, limit):
     return "".join([str(n * i) for i in range(1, 1 + limit)])
-
-
-def is_pandigital(n):
-    n_digits = len(str(n))
-    digits = [str(i) for i in range(1, n_digits + 1)]
-    return sorted(list(str(n))) == digits
 
 
 def main():

@@ -135,6 +135,10 @@ def digits(n):
     return [int(i) for i in list(str(n))]
 
 
+def from_digits(n_list):
+    return int("".join([str(n) for n in n_list]))
+
+
 def is_palindrome(n):
     lst = list(str(n))
     return lst == list(reversed(lst))
@@ -142,3 +146,9 @@ def is_palindrome(n):
 
 def product(lst):
     return reduce(lambda a, b: a * b, lst)
+
+
+def is_pandigital(n):
+    n_digits = len(str(n))
+    digits = [str(i) for i in range(1, n_digits + 1)]
+    return sorted(list(str(n))) == digits
