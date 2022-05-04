@@ -9,7 +9,7 @@
 
 
 def main():
-    with open("ex22_names.txt") as f:
+    with open("solutions/ex22_names.txt") as f:
         names = f.readline().replace('"', "").split(",")
     names.sort()
     total = 0

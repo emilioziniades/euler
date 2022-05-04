@@ -30,7 +30,7 @@ def is_triangle_word(word):
 
 
 def main():
-    with open("ex42_words.txt") as f:
+    with open("solutions/ex42_words.txt") as f:
         words = [word.strip('"') for word in f.read().split(",")]
     triangle_words = list(filter(is_triangle_word, words))
     return len(triangle_words)
