@@ -45,6 +45,7 @@ from solutions import (
     ex41,
     ex42,
     ex43,
+    ex48,
 )
 
 
@@ -94,6 +95,7 @@ class TestEulerSolutions(unittest.TestCase):
             (ex41, 7652413),
             (ex42, 162),
             (ex43, 16695334890),
+            (ex48, 9110846700),
         ]
         for ex, want in exercises:
             with self.subTest(i=ex):
